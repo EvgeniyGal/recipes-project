@@ -35,7 +35,7 @@ const Recipes = () => {
   const [user, setUser] = useState(DEFAULT_USER);
   const isLoggedIn = useSelector(state => state.authSlice.isLoggedIn);
   const { data: userResp, isSuccess: isUserSuccess } =
-    authApi.useFetchCurrentUserQuery({}, { skip: !isLoggedIn });
+    authApi.useFetchCurrentUserQuery(null, { skip: !isLoggedIn });
   //recipe list
   const [recipeList, setRecipeList] = useState([]);
   const { data, isFetching, isSuccess, isError } =

@@ -6,10 +6,9 @@ import cl from './popularRecipes.module.scss';
 
 const PopularRecipes = () => {
   const isLoggedIn = useSelector(state => state.authSlice.isLoggedIn);
-  const { data: userData } = useFetchCurrentUserQuery(
-    {},
-    { skip: !isLoggedIn }
-  );
+  const { data: userData } = useFetchCurrentUserQuery(null, {
+    skip: !isLoggedIn,
+  });
   const reqData = {
     userId: userData ? userData._id : null,
   };

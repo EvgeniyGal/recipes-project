@@ -10,10 +10,10 @@ const UserBar = () => {
   const [modalType, setModalType] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
-  const { data: user, isSuccess } = useFetchCurrentUserQuery();
+  const { data: user } = useFetchCurrentUserQuery();
 
   const navigate = useNavigate();
-  const menuRef = useRef(null); // Ref for the user menu
+  const menuRef = useRef(null);
 
   const toggleModal = type => {
     setModalType(type);
@@ -36,7 +36,6 @@ const UserBar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle clicks outside of the user menu
   useEffect(() => {
     const handleClickOutside = event => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {

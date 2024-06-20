@@ -12,21 +12,27 @@ import {
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import Modal from '../ui/Modal';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const RecipeInfo = () => {
   const { recipeId } = useParams();
   const isLoggedIn = useSelector(state => state.authSlice.isLoggedIn);
-  const { data: userData } = useFetchCurrentUserQuery(
-    {},
-    { skip: !isLoggedIn }
-  );
+  const { data: userData } = useFetchCurrentUserQuery(null, {
+    skip: !isLoggedIn,
+  });
 
   const reqData = {
     id: recipeId,
     userId: userData ? userData._id : null,
   };
 
-  const { data: recipe } = useGetRecipeByIdQuery(reqData);
+  const {
+    data: recipe,
+    isLoading,
+    isError,
+    error,
+  } = useGetRecipeByIdQuery(reqData);
   const isFavorite = recipe?.isFavorite;
 
   const [favorite, setFavorite] = useState(isFavorite);
@@ -72,28 +78,47 @@ const RecipeInfo = () => {
       {showModal && <Modal onClose={toggleModal} type={modalType} />}
 
       <div className={cl.container}>
-        <img src={recipe?.thumb} alt={recipe?.title} className={cl.image} />
+        {isLoading ? (
+          <Skeleton />
+        ) : (
+          <img src={recipe?.thumb} alt={recipe?.title} className={cl.image} />
+        )}
         <div>
-          <h1 className={cl.title}>{recipe?.title}</h1>
+          <h1 className={cl.title}>
+            {isLoading ? <Skeleton /> : recipe?.title}
+          </h1>
           <div className={cl['feature-container']}>
-            <p className={cl.feature}>{recipe?.category.name}</p>
-            <p className={cl.feature}> {recipe?.time} min</p>
+            <p className={cl.feature}>
+              {isLoading ? <Skeleton /> : recipe?.category.name}
+            </p>
+            <p className={cl.feature}>
+              {' '}
+              {isLoading ? <Skeleton /> : recipe?.time} min
+            </p>
           </div>
-          <p className={cl.description}>{recipe?.description}</p>
+          <p className={cl.description}>
+            {isLoading ? <Skeleton /> : recipe?.description}
+          </p>
           <Button onClick={() => handleOwnerClick(recipe?.owner?._id)}>
             <div className={cl['owner-container']}>
-              <img
-                src={
-                  recipe?.owner?.avatar
-                    ? recipe?.owner?.avatar
-                    : '/images/user/avatar-3814049_640.webp'
-                }
-                alt={recipe?.owner?.name}
-                className={cl['owner-image']}
-              />
+              {isLoading ? (
+                <Skeleton />
+              ) : (
+                <img
+                  src={
+                    recipe?.owner?.avatar
+                      ? recipe?.owner?.avatar
+                      : '/images/user/avatar-3814049_640.webp'
+                  }
+                  alt={recipe?.owner?.name}
+                  className={cl['owner-image']}
+                />
+              )}
               <p>
                 <span className={cl['owner-title']}>Created by:</span>
-                <span className={cl['owner-name']}>{recipe?.owner?.name}</span>
+                <span className={cl['owner-name']}>
+                  {isLoading ? <Skeleton /> : recipe?.owner?.name}
+                </span>
               </p>
             </div>
           </Button>
@@ -104,13 +129,15 @@ const RecipeInfo = () => {
               handleFavorite();
             }}
             addClass={cl.button}
-            // disabled={!isLoggedIn}
-            // addClass={isLoggedIn ? `${cl.button}` : `${cl['button-disabled']}`}
           >
             {favorite ? 'REMOVE FROM FAVORITES' : 'ADD TO FAVORITES'}
           </Button>
         </div>
       </div>
+
+      {isError && (
+        <p className={cl['error-msg']}>{`Error: ${error.message}`}</p>
+      )}
     </>
   );
 };

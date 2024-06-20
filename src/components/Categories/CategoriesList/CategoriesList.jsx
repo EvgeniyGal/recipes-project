@@ -4,7 +4,6 @@ import CategoryCard from '../CategoryCard';
 import { useMediaPredicate } from 'react-media-hook';
 import BREAKPOINTS from '../../../assets/constants/breakpoints';
 import CategorySkeleton from '../CategorySkeleton';
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 const { MOBILE, MOBILE_MAX, TABLET, DESKTOP } = BREAKPOINTS;
@@ -99,7 +98,4 @@ const isElementWide = (idx, tablet, desktop) => {
   return isWide;
 };
 
-CategoryList.propTypes = {
-  handleCategories: PropTypes.func.isRequired,
-};
 export default CategoryList;
