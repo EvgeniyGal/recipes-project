@@ -1,0 +1,55 @@
+.ingredient {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 155px;
+  width: 100%;
+  @media (768px <=width) {
+    max-width: 178px;
+    gap: 14px;
+  }
+}
+
+.ingredient img {
+  width: 75px;
+  height: 75px;
+  border-radius: 15px;
+  padding: 4px;
+  border: 1px solid var(--border-color-light-dark);
+
+  @media (768px <=width) {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.ingredient-info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 4px;
+}
+
+.ingredient-info p,
+.ingredient-info span {
+  font-weight: 500;
+  color: var(--primary-text-color);
+  font-size: 14px;
+
+  @media (768px <=width) {
+    font-size: 16px;
+  }
+}
+
+.ingredient-info span {
+  color: var(--secondary-text-color);
+}
+
+.ingredient-info button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+}

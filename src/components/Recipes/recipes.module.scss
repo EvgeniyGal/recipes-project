@@ -1,0 +1,115 @@
+.recipesWrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(343px, 1fr));
+  width: 100%;
+  row-gap: 32px;
+  position: relative;
+
+  .recipesContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    width: 100%;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(1, minmax(704px, 1fr));
+    row-gap: 40px;
+    // width: 704px;
+  }
+
+  @include desktop {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--secondary-text-color);
+}
+
+.skeletonList {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(343px, 1fr));
+  width: 343px;
+  row-gap: 32px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(342px, 1fr));
+    row-gap: 40px;
+    column-gap: 20px;
+    width: 704px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, minmax(290px, 1fr));
+    row-gap: 40px;
+    column-gap: 20px;
+    width: 910px;
+  }
+}
+
+.recipeBack {
+  width: 63px;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: transparent;
+  transition-property: border, stroke, fill, background-color, color;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-effect);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-text-color);
+    border-color: var(--primary-text-color);
+    color: var(--white-color);
+  }
+  @include tablet {
+    width: 80px;
+    gap: 6px;
+    font-size: 14px;
+    line-height: 1.28;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+
+    @include tablet {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  span {
+    margin: 10px 0 8px 0;
+    padding-right: 5px;
+  }
+}
+
+.recipeSubtitle {
+  @include tablet {
+    width: 540px;
+  }
+}

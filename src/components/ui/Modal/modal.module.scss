@@ -1,0 +1,153 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInWr {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutWr {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(5, 5, 5, 0.6);
+  z-index: 9;
+  width: 100%;
+  min-height: 100vh;
+  animation: fadeInWr 0.4s ease-out;
+
+  &_scroll {
+    align-items: flex-start;
+    padding-block: 40px;
+  }
+}
+
+.wrapper_show {
+  animation: fadeOutWr 0.4s ease-in;
+}
+
+.wrapper {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 0 solid rgba(0, 0, 0, 0);
+    min-width: 32px;
+  }
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 30px;
+  background-color: var(--white-color);
+  animation: fadeIn 0.4s ease-out;
+
+  @include tablet {
+    padding: 80px;
+  }
+}
+
+.modal_show {
+  animation: fadeOut 0.4s ease-in;
+}
+
+.close_button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+  }
+}
+
+.close_icon {
+  stroke: var(--primary-text-color);
+  transform: scale(1);
+  transition: transform var(--transition-time) var(--transition-effect);
+}
+
+.close_icon:hover,
+.close_icon:active {
+  stroke: var(--primary-text-color);
+  transform: scale(1.2);
+}
+
+.cancel_button {
+  border-radius: 30px;
+  border: 1px solid var(--border-color-light-dark);
+  padding-block: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+  }
+}

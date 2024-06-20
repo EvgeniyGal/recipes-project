@@ -1,0 +1,138 @@
+.selectWrapper {
+  position: relative;
+
+  .selectButton {
+    width: 100%;
+    font-size: 1.15rem;
+    background-color: var(--white-color);
+    padding: 0.675em 1em;
+    border: 1px solid var(--pagination-border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    .selectValue {
+      display: block;
+      text-align: left;
+      color: var(--light-text-color);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.42;
+      letter-spacing: -0.02em;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+
+    span svg {
+      transition: transform ease-in-out 0.3s;
+      width: 18px;
+      height: 18px;
+      padding: 3px;
+      --fill: none;
+      --stroke: var(--primary-text-color);
+    }
+  }
+
+  .selectDropdown {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    background-color: var(--white-color);
+    border: 1px solid var(--pagination-border-color);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: 0.5s ease;
+    z-index: 1;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .selectDropdown li {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+
+    align-items: center;
+  }
+
+  .selectDropdown li label {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.42;
+    letter-spacing: -0.02em;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .selectDropdown::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .selectDropdown li:hover,
+  .selectDropdown input:checked ~ label {
+    background-color: var(--pagination-border-color);
+  }
+
+  .selectDropdown input:focus ~ label {
+    background-color: var(--pagination-border-color);
+  }
+
+  .selectDropdown input[type='radio'] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+  }
+
+  @include mobile {
+    width: 343px;
+  }
+
+  @include tablet {
+    width: 345px;
+  }
+
+  @include desktop {
+    width: 330px;
+  }
+}
+
+.active {
+  svg {
+    transform: rotate(180deg);
+  }
+
+  .selectDropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+}

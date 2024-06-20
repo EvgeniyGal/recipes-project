@@ -1,0 +1,173 @@
+.container {
+  margin: 64px auto 80px;
+  width: 100%;
+  padding: 0 20px;
+
+  @media (375px<=width) {
+    max-width: var(--mobile);
+  }
+
+  @media (768px<=width) {
+    max-width: var(--tablet);
+    padding: 0 32px;
+    margin-top: 64px;
+    margin-bottom: 100px;
+  }
+
+  @media (1440px<=width) {
+    max-width: 1280px;
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+}
+
+.userData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    column-gap: 40px;
+  }
+}
+
+.userWrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  margin-bottom: 64px;
+
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include desktop {
+    margin-bottom: 0;
+  }
+}
+
+.userTextWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 30px 54px;
+  max-width: 343px;
+  border-radius: 30px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+
+  @include tablet {
+    gap: 20px;
+    padding: 40px 80px;
+
+    width: 394px;
+  }
+}
+
+.userInfoImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.userInfoText {
+  color: rgba(5, 5, 5, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+
+  @media (768px<=width) {
+    font-size: 14px;
+    line-height: 1.43;
+  }
+}
+
+.userInfoSpan {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.43;
+  letter-spacing: -0.28px;
+  color: rgba(5, 5, 5, 0.9);
+
+  @media (768px<=width) {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+  }
+}
+
+.icon {
+  fill: #cccccc;
+  stroke: #fff;
+  color: #ffffff;
+}
+
+.logoutBtn {
+  display: flex;
+  padding: 14px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.43;
+  letter-spacing: -0.28px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(5, 5, 5, 0.85);
+}
+
+.imgWrap {
+  position: relative;
+}
+
+.subtitle {
+  max-width: 443px;
+}
+
+.plusBtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15%;
+  padding: 10px;
+  border-radius: 50px;
+  background: #050505;
+}
+
+.listTabText {
+  overflow: hidden;
+  color: rgba(5, 5, 5, 0.8);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.28px;
+}
+
+.tablistBox {
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+//.tabContent {}

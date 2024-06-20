@@ -1,0 +1,32 @@
+.container {
+  margin-bottom: 32px;
+
+  @media (768px<=width) {
+    margin-bottom: 40px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @media (768px<=width) {
+    gap: 20px;
+  }
+}
+
+.title {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  margin-bottom: 20px;
+
+  @media (768px<=width) {
+    font-size: 20px;
+    line-height: 120%;
+  }
+}

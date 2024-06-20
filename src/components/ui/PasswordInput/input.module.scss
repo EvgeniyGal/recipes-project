@@ -1,0 +1,39 @@
+.input_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 4px;
+}
+
+.input_form {
+  display: flex;
+  padding: 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid var(--primary-text-color);
+
+  color: rgba(5, 5, 5, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+  }
+
+  &__error {
+    border: 1px solid var(--error-color);
+  }
+}
+
+.toggle_password {
+  position: absolute;
+  top: 17px;
+  right: 14px;
+  stroke: rgba(5, 5, 5, 0.8);
+  background-color: #00000000;
+}

@@ -1,0 +1,17 @@
+.error {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+  color: var(--error-color);
+
+  @include mobile {
+    padding-left: 14px;
+    max-width: 283px;
+  }
+
+  @include tablet {
+    font-size: 14px;
+    max-width: 400px;
+  }
+}

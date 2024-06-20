@@ -1,0 +1,15 @@
+.subtitle {
+  margin-block: 16px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+  color: var(--secondary-text-color);
+
+  @include tablet {
+    margin-block: 20px 40px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+  }
+}

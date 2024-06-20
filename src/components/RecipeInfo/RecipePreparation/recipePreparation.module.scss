@@ -1,0 +1,38 @@
+.title {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  margin-bottom: 20px;
+
+  @media (768px<=width) {
+    font-size: 20px;
+    line-height: 120%;
+  }
+}
+
+.text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.02em;
+  color: var(--button-bg);
+
+  @media (768px<=width) {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
+.text:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+.text:last-of-type {
+  margin-bottom: 32px;
+  @media (768px<=width) {
+    margin-bottom: 40px;
+  }
+}

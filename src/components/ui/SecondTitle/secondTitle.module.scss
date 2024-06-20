@@ -1,0 +1,15 @@
+.title {
+  font-family: var(--base-font);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.14286;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+
+  @include tablet {
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+}

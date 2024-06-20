@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  gap: 40px;
+  text-transform: capitalize;
+}
+
+.link {
+  box-sizing: border-box;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  padding: 14px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  transition: border var(--transition-time) var(--transition-effect);
+  &.active,
+  &:hover,
+  &:focus {
+    border-color: var(--border-color-light-dark);
+  }
+}

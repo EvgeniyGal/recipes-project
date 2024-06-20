@@ -1,0 +1,70 @@
+.button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 30px;
+  border: 1px solid var(--border-color-light-dark);
+  background-color: transparent;
+
+  transition-property: border, stroke, background;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-effect);
+
+  & svg {
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-text-color);
+    border-color: var(--primary-text-color);
+
+    svg {
+      --stroke: var(--white-color);
+      --fill: currentcolor;
+    }
+  }
+
+  svg {
+    --fill: none;
+    --stroke: var(--primary-text-color);
+
+    @include tablet {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+
+  @include tablet {
+    width: 42px;
+    height: 42px;
+  }
+
+  @include desktop {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.active {
+  svg {
+    --stroke: var(--active-color, red);
+    --fill: var(--active-color, red);
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      --stroke: var(--active-color, red);
+    }
+  }
+}

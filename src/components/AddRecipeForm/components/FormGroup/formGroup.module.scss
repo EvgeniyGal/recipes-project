@@ -1,0 +1,14 @@
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.light {
+  color: var(--light-text-color);
+}
+
+.custome-error {
+  padding: 0 !important;
+}

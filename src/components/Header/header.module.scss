@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    padding: 0 24px;
+    color: var(--white-color);
+
+    @media (768px<=width) {
+        padding: 0 48px;
+        top: 36px;
+    }
+
+    @media (1440px<=width) {
+        padding: 0 80px;
+        top: 40px;
+    }
+
+    &.black {
+        position: relative;
+        top: 0;
+        padding-top: 24px;
+        color: var(--primary-text-color);
+        @media (768px<=width) {
+            padding-top: 36px;
+        }
+    
+        @media (1440px<=width) {
+            padding-top: 40px;
+        }
+    }
+
+    .mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+}

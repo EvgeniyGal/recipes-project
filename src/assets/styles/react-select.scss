@@ -1,0 +1,76 @@
+.react-select-container .react-select__control {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 0 14px;
+  height: 48px;
+  gap: 10px;
+  color: var(--secondary-text-color);
+  background-color: var(--white-color);
+  border-radius: 30px !important;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+  box-shadow: none;
+  outline: none;
+  transition: all var(--transition-time) var(--transition-effect);
+
+  @media (width >=768px) {
+    font-size: 16px;
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid var(--border-color-dark);
+  }
+}
+.react-select__control--is-focused {
+  border: 1px solid var(--border-color-dark) !important;
+}
+.react-select__indicator-separator {
+  background-color: transparent !important;
+}
+
+.react-select__menu {
+  border: 1px solid var(--border-color-light-dark);
+  padding: 0;
+  box-shadow: none !important;
+  border-radius: 15px !important;
+}
+.react-select__menu-list {
+}
+.react-select__option {
+  padding: 0;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+  color: var(--primary-text-color) !important;
+  cursor: pointer !important;
+  @media (width >=768px) {
+    font-size: 16px;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--primary-text-color) !important;
+    background: none;
+    background-color: transparent !important;
+    font-weight: 700;
+  }
+}
+
+.react-select__option--is-focused {
+  background-color: var(--white-color) !important;
+}
+.react-select__option--is-selected {
+  font-weight: 700;
+  color: var(--primary-text-color);
+  background-color: var(--white-color) !important;
+}

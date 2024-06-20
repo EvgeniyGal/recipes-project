@@ -1,0 +1,69 @@
+.wrapper {
+  width: 100%;
+  height: calc(100vh - 238px);
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet {
+    height: calc(100vh - 272px);
+    min-height: 350px;
+  }
+
+  @include desktop {
+    height: calc(100vh - 308px);
+    min-height: 400px;
+  }
+}
+
+.foodies404 {
+  display: block;
+  width: 100%;
+  height: 80%;
+  padding-right: 8vw;
+  --fill: red;
+  --f: green;
+  --cat: rgb(165, 158, 140);
+  --cat-eye: var(--primary-text-color);
+  --cat-n: var(--primary-text-color);
+  --pizza-bg: rgb(197, 202, 180);
+  --sausage: var(--primary-text-color);
+  --sausage-r: var(--white-color);
+  --text: var(--primary-text-color);
+  --bg: var(--white-color);
+  --l-bg: var(--white-color);
+  --plate-r: grey;
+  --plate-bg: var(--white-color);
+  --box-bg: rgb(167, 166, 166);
+  --box-r: grey;
+}
+
+.to_home {
+  padding: 4px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.42857;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+  width: 224px;
+
+  @include mobile {
+    width: 283px;
+  }
+
+  &:hover {
+    background-color: var(--white-color);
+  }
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+  }
+}

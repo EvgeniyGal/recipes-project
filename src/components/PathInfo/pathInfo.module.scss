@@ -1,0 +1,26 @@
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 32px;
+
+  @media (768px<=width) {
+    margin-bottom: 40px;
+  }
+}
+.breadcrumb span {
+  color: #05050540;
+}
+.home-link,
+.link {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.home-link {
+  color: #05050540;
+}
+.link {
+  color: var(--primary-text-color);
+}

@@ -1,0 +1,163 @@
+$mobile: 375px;
+$mobile-max: 767.99px;
+$tablet: 768px;
+$tablet-max: 1439.99px;
+$desktop: 1440px;
+
+.cardContainer {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @media screen and (min-width: $tablet) {
+    gap: 16px;
+  }
+}
+.cardImage {
+  display: block;
+  width: 75px;
+  height: 75px;
+
+  border-radius: 15px;
+  @media screen and (min-width: $tablet) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.cardTitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: left;
+  letter-spacing: -0.02em;
+  color: var(--primary-text-color);
+  width: 100%;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+}
+
+.cardText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: var(--secondary-text-color);
+  height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.listButton {
+  display: flex;
+  gap: 4px;
+  margin-left: 16px;
+  @media screen and (min-width: $tablet) {
+    margin-left: 40px;
+  }
+}
+
+.hiddenButton {
+  display: none;
+}
+/* Skeleton styles */
+/* Skeleton styles */
+.skeleton {
+  background: linear-gradient(-90deg, #e0e0e0 0%, #f0f0f0 50%, #e0e0e0 100%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeletonContainer {
+  display: flex;
+  align-items: start;
+}
+
+.skeletonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  @media screen and (min-width: $tablet) {
+    gap: 16px;
+  }
+}
+
+.skeletonImage {
+  display: block;
+  width: 75px;
+  height: 75px;
+  border-radius: 15px;
+  @media screen and (min-width: $tablet) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.skeletonTextTitleWrapper {
+  width: 90%;
+}
+.skeletonTitle {
+  width: 20%;
+  height: 24px;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $tablet) {
+    height: 28px;
+    margin-bottom: 10px;
+  }
+}
+
+.skeletonText {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $tablet) {
+    height: 20px;
+  }
+}
+
+.skeletonButton {
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+}

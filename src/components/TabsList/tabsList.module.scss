@@ -1,0 +1,54 @@
+.tabsList {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 32px;
+  max-width: 100%;
+
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+
+  width: 546px;
+  list-style: none;
+  border-bottom: 1px solid #05050533;
+
+  @media (768px <= width) {
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
+
+.tabsList li {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 14px;
+  border-bottom: 2px solid transparent;
+
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: -0.36px;
+  text-transform: uppercase;
+  color: rgba(5, 5, 5, 0.6);
+
+  @media (768px <= width) {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+  }
+}
+
+.tabsList li.active {
+  color: #050505;
+}
+
+.tabsList li.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -9%;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+}

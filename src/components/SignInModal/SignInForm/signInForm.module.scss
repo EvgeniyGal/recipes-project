@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 32px;
+
+  @include mobile {
+    width: 283px;
+  }
+
+  @include tablet {
+    width: 400px;
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.custome-error {
+  margin-top: -25px;
+}

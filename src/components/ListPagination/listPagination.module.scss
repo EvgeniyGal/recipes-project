@@ -1,0 +1,7 @@
+.listPagination {
+  margin-top: 0;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+}

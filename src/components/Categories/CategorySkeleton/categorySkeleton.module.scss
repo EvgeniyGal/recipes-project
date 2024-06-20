@@ -1,0 +1,74 @@
+/* Breakpoints */
+$mobile: 375px;
+$mobile-max: 767.99px;
+$tablet: 768px;
+$tablet-max: 1439.99px;
+$desktop: 1440px;
+
+.category-skeleton {
+  position: relative;
+
+  border-radius: 30px;
+  animation: skeleton-loading 1s linear infinite alternate;
+
+  @media screen and ($tablet <= width) {
+    grid-column: span 3;
+    &.wide {
+      grid-column: span 6;
+    }
+  }
+
+  @media screen and ($desktop <= width) {
+    grid-column: span 4;
+    &.wide {
+      grid-column: span 7;
+    }
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-color: rgba(var(--black-rgb), 0.2);
+    }
+    100% {
+      background-color: rgba(var(--black-rgb), 0.4);
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+
+  display: flex;
+  column-gap: 4px;
+
+  @media screen and ($tablet <= width) {
+    left: 24px;
+    bottom: 24px;
+  }
+}
+
+.circle,
+.pill {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 30px;
+  border: 1px solid rgba(var(--black-rgb), 0.1);
+  background-color: rgba(var(--black-rgb), 0.2);
+
+  @media screen and ($tablet <= width) {
+    width: 42px;
+    height: 42px;
+  }
+
+  @media screen and ($desktop <= width) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.pill {
+  width: 120px;
+}

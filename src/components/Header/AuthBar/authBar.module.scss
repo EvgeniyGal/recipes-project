@@ -1,0 +1,59 @@
+.authBtns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white-color);
+  border-radius: 30px;
+  position: relative;
+  z-index: 0;
+
+  & > * {
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: -0.24px;
+    text-transform: uppercase;
+  }
+
+  button {
+    z-index: 2;
+    background-color: transparent;
+    color: var(--primary-text-color);
+    transition: textAnimation var(--transition-time) var(--transition-effect);
+  }
+
+  .activeBtn {
+    width: calc(100% / 2);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    color: var(--white-color);
+    background-color: var(--button-bg);
+    border: 1px solid var(--auth-bar-border);
+    transition: transform var(--transition-time) var(--transition-effect);
+    z-index: 1;
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    color: var(--primary-text-color);
+    opacity: 0;
+  }
+  100% {
+    color: var(--white-color);
+    opacity: 1;
+  }
+}
+
+.active {
+  transform: translateX(calc(100%));
+}
+
+.activeAuth {
+  animation: textAnimation var(--transition-time) var(--transition-effect);
+  animation-fill-mode: forwards;
+}

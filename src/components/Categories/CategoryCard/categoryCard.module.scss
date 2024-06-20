@@ -1,0 +1,122 @@
+/* Breakpoints */
+$mobile: 375px;
+$mobile-max: 767.99px;
+$tablet: 768px;
+$tablet-max: 1439.99px;
+$desktop: 1440px;
+
+.category {
+  --radius: 30px;
+
+  position: relative;
+
+  border-radius: var(--radius);
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(var(--black-rgb), 0.2);
+
+  @media screen and ($tablet <= width) {
+    grid-column: span 3;
+    &.wide {
+      grid-column: span 6;
+    }
+  }
+
+  @media screen and ($desktop <= width) {
+    grid-column: span 4;
+    &.wide {
+      grid-column: span 7;
+    }
+  }
+
+  &:not(:last-child):before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border-radius: var(--radius);
+    background-color: rgba(var(--black-rgb), 0.2);
+  }
+}
+
+.content {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+
+  display: flex;
+  column-gap: 4px;
+
+  @media screen and ($tablet <= width) {
+    left: 24px;
+    bottom: 24px;
+  }
+
+  & .button-icon {
+    --stroke: currentcolor;
+    color: var(--white-color);
+
+    border-color: rgba(var(--white-rgb), 0.3);
+    background-color: rgba(var(--white-rgb), 0.2);
+  }
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-to-all {
+  color: var(--white-color);
+  font-weight: 800;
+  line-height: 1.5; /* 150% */
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+
+  transform: scale(1);
+
+  transition-property: transform;
+  transition-duration: var(--transition-time);
+  transition-timing-function: var(--transition-effect);
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.1);
+  }
+
+  @media screen and ($tablet <= width) {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2; /* 120% */
+    letter-spacing: -0.4px;
+  }
+}
+
+.name-pill {
+  border-radius: 30px;
+  border: 1px solid rgba(var(--white-rgb), 0.4);
+  background: rgba(var(--white-rgb), 0.3);
+
+  display: flex;
+  padding: 0 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5; /* 150% */
+  letter-spacing: -0.32px;
+
+  @media screen and ($tablet <= width) {
+    padding: 0 14px;
+
+    font-size: 20px;
+    line-height: 1.2; /* 120% */
+    letter-spacing: -0.4px;
+  }
+}

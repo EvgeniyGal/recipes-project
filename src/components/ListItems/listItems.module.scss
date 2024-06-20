@@ -1,0 +1,14 @@
+$mobile: 375px;
+$mobile-max: 767.99px;
+$tablet: 768px;
+$tablet-max: 1439.99px;
+$desktop: 1440px;
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  //gap: 32px;
+  //@media screen and (min-width: $tablet) {
+  //  gap: 40px;
+  //}
+}

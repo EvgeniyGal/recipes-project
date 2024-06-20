@@ -1,0 +1,20 @@
+.recipeList {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(343px, 1fr));
+  width: 343px;
+  row-gap: 32px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(342px, 1fr));
+    row-gap: 40px;
+    column-gap: 20px;
+    width: 704px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, minmax(290px, 1fr));
+    row-gap: 40px;
+    column-gap: 20px;
+    width: 910px;
+  }
+}

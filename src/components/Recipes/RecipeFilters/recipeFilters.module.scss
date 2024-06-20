@@ -1,0 +1,24 @@
+.recipeFilters {
+  display: grid;
+  height: fit-content;
+  grid-template-columns: repeat(1, minmax(343px, 1fr));
+  width: 343px;
+  row-gap: 14px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(345px, 1fr));
+    row-gap: 14px;
+    column-gap: 14px;
+    width: 704px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(1, minmax(330px, 1fr));
+    row-gap: 14px;
+    width: 330px;
+  }
+}
+
+.clear {
+  cursor: pointer;
+}

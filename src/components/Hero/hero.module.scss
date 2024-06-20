@@ -1,0 +1,107 @@
+.section {
+  background-color: var(--hero-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  border-radius: 20px;
+  gap: 20px;
+  color: var(--white-color);
+  padding: 194px 16px 100px;
+
+  .title {
+    font-size: 40px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1em;
+    letter-spacing: -0.8px;
+    text-transform: uppercase;
+
+    @media (768px<=width) {
+      font-size: 70px;
+    }
+
+    @media (1440px<=width) {
+      font-size: 90px;
+    }
+  }
+
+  .desc {
+    color: var(--subtitle-white-color);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: -0.28px;
+    max-width: 326px;
+
+    @media (768px<=width) {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+      max-width: 577px;
+    }
+  }
+  @media (768px<=width) {
+    padding: 217px 32px 90px;
+    border-radius: 30px;
+    gap: 40px;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  gap: 20px;
+  
+
+  .firstImg {
+    border-radius: 15px;
+    width: 77px;
+    height: 70px;
+    object-fit: cover;
+    transform: rotate(11deg);
+    flex-shrink: 0;
+    @media (768px<=width) {
+      width: 128px;
+      height: 116px;
+    }
+  }
+
+  .lastImg {
+    border-radius: 30px;
+    width: 190px;
+    height: 172px;
+    object-fit: cover;
+    transform: rotate(-12deg);
+    flex-shrink: 0;
+    @media (768px<=width) {
+      width: 302px;
+      height: 273px;
+    }
+  }
+}
+.button {
+  background-color: transparent;
+  border: 1px solid var(--hero-button);
+  color: var(--hero-button);
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all var(--transition-time) var(--transition-effect);
+  @media (768px<=width) {
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  &:hover {
+    background-color: var(--hero-button);
+    color: var(--primary-text-color);
+  }
+}

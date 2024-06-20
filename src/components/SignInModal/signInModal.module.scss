@@ -1,0 +1,24 @@
+.title_center {
+  display: block;
+  min-width: 100%;
+  margin-inline: auto;
+}
+.footer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  margin-top: 20px;
+
+  color: var(--light-text-color);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.286;
+  letter-spacing: -0.28px;
+
+  @include tablet {
+    font-size: 14px;
+  }
+}

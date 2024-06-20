@@ -1,0 +1,16 @@
+.title {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.33;
+  letter-spacing: -2%;
+  color: var(--primary-text-color);
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 24px;
+  }
+}
+
+.title.light {
+  color: var(--light-text-color);
+}

@@ -1,0 +1,53 @@
+:root {
+  /* Colors */
+  --body-bg: #ffffff;
+  --white-color: #ffffff;
+  --primary-text-color: #050505;
+  --secondary-text-color: #050505cc;
+  --recipe-feature-text: rgba(5, 5, 5, 0.6);
+  --subtitle-text-color: #05050580;
+  --subtitle-white-color: #ffffff80;
+  --light-text-color: #05050599;
+  --border-color-dark: #050505;
+  --border-color-light-dark: #05050520;
+  --hero-bg: #050505;
+  --hero-button: #ffffffe5;
+  --auth-bar-border: #e8e8e8;
+  --user-bar-border: #ffffff33;
+  --border-color-light: #05050512;
+  --button-disable-color: #ffffff40;
+  --button-disable-bg: #05050520;
+  --button-bg: rgba(5, 5, 5, 0.85);
+  --button-border: rgba(5, 5, 5, 0.12);
+  --pagination-border-color: #05050510;
+  --breadcrum-home: #05050540;
+  --error-color: #c42424;
+
+  /* Breakpoints */
+  --mobile: 375px;
+  --mobile-max: 767.98px;
+  --tablet: 768px;
+  --table-max: 1439.98px;
+  --desktop: 1440px;
+
+  /* Transition properties */
+  --transition-time: 250ms;
+  --transition-effect: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Backdrop */
+  --background-color: rgba(18, 20, 23, 0.4);
+
+  /* Backdrop */
+  --base-font: 'Mulish', sans-serif;
+
+  /* SVG-icons */
+  --stroke: var(--border-color-dark);
+  --fill: none;
+
+  /* RGB */
+  --white-rgb: 255, 255, 255;
+  --black-rgb: 0, 0, 0;
+}
+
+body.dark {
+}
